@@ -1,1 +1,1 @@
-[{"id": "test-uuid-001", "username": "testuser", "salt": "abc123", "password_hash": "testhash", "nickname": "测试用户", "avatar_color": 4289463125, "bio": "测试", "is_admin": true, "banned": false, "created_at": 1727200000}]
+[]
