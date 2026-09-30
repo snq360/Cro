@@ -8,7 +8,10 @@
     "recalled": false,
     "time_ms": 1790416760639,
     "id": "488b226a-3a32-4a8b-903d-99ff5cf45fe3",
-    "created_at": 1790416760
+    "created_at": 1790416760,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_8d3821be-f8fc-4efd-81b8-b1837e995720",
@@ -19,7 +22,10 @@
     "recalled": false,
     "time_ms": 1790416771177,
     "id": "63852f8e-35c0-45d4-86ea-7596cd13b31f",
-    "created_at": 1790416771
+    "created_at": 1790416771,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_8d3821be-f8fc-4efd-81b8-b1837e995720",
@@ -30,7 +36,10 @@
     "recalled": false,
     "time_ms": 1790416793542,
     "id": "ff473c89-a81f-4674-b106-e36b7d81cf55",
-    "created_at": 1790416793
+    "created_at": 1790416793,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_8d3821be-f8fc-4efd-81b8-b1837e995720",
@@ -41,7 +50,10 @@
     "recalled": false,
     "time_ms": 1790479573863,
     "id": "b683a2ce-08e0-456b-a606-942321d4a049",
-    "created_at": 1790479573
+    "created_at": 1790479573,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_8d3821be-f8fc-4efd-81b8-b1837e995720",
@@ -52,7 +64,10 @@
     "recalled": false,
     "time_ms": 1790502272452,
     "id": "e92a4b48-e94d-4e17-b010-cf7ef3eeb236",
-    "created_at": 1790502272
+    "created_at": 1790502272,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_8d3821be-f8fc-4efd-81b8-b1837e995720",
@@ -63,7 +78,10 @@
     "recalled": false,
     "time_ms": 1790504100540,
     "id": "d309d8bc-e7be-47d2-baa2-70c9c02fa8fc",
-    "created_at": 1790504100
+    "created_at": 1790504100,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_4ce96d22-2eec-412e-8333-28249d77b7ca",
@@ -74,7 +92,10 @@
     "recalled": false,
     "time_ms": 1790504850487,
     "id": "35971318-9ff2-46c5-ab20-8acb0927b578",
-    "created_at": 1790504850
+    "created_at": 1790504850,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   },
   {
     "conversation_id": "2872f71b-c472-4e09-8319-e18e3a78f52b_4ce96d22-2eec-412e-8333-28249d77b7ca",
@@ -85,6 +106,9 @@
     "recalled": false,
     "time_ms": 1790776240585,
     "id": "cc965480-3012-41e2-81aa-9be2b9a5e063",
-    "created_at": 1790776240
+    "created_at": 1790776240,
+    "attachment_url": "",
+    "delivered": true,
+    "read_at": 0
   }
 ]
