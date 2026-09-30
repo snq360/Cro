@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "migrated_at": "2026-10-01",
+  "description": "流光 ShortFlow 数据库 schema",
+  "tables": {
+    "users": "用户账号表",
+    "videos": "视频作品表",
+    "comments": "评论表",
+    "messages": "私信消息表",
+    "follows": "关注关系表",
+    "likes": "点赞记录表",
+    "notifications": "通知表"
+  },
+  "id_format": "UUID v4 字符串",
+  "time_unit": "毫秒 (long)",
+  "write_protocol": "read-sha → modify → put-with-sha → 409重试"
+}
