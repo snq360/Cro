@@ -7,7 +7,9 @@
     "is_read": true,
     "time_ms": 1790255122969,
     "id": "af666683-b15e-48a1-8067-b28456d0ff80",
-    "created_at": 1790255123
+    "created_at": 1790255123,
+    "read_at": 0,
+    "icon_url": ""
   },
   {
     "user_id": "2872f71b-c472-4e09-8319-e18e3a78f52b",
@@ -17,6 +19,8 @@
     "is_read": true,
     "time_ms": 1790764855000,
     "id": "f2106377-7c95-45ee-acca-14d94cfda68c",
-    "created_at": 1790764855
+    "created_at": 1790764855,
+    "read_at": 0,
+    "icon_url": ""
   }
 ]
