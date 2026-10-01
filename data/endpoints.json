@@ -1,0 +1,214 @@
+{
+  "schema_version": 2,
+  "api_version": "v1",
+  "base_url": "https://api.github.com/repos/snq360/Cro/contents/data",
+  "endpoints": [
+    {
+      "name": "读取表",
+      "method": "GET",
+      "path": "{table}/{table}.json",
+      "params": [
+        "table"
+      ],
+      "returns": "{content: base64, sha: string}"
+    },
+    {
+      "name": "写入表",
+      "method": "PUT",
+      "path": "{table}/{table}.json",
+      "params": [
+        "content(base64)",
+        "sha",
+        "message"
+      ],
+      "returns": "{sha: string, commit: string}"
+    },
+    {
+      "name": "插入记录",
+      "method": "custom",
+      "path": "readTable → modify → writeTable",
+      "params": [
+        "item"
+      ],
+      "returns": "item with id+created_at"
+    },
+    {
+      "name": "按ID更新",
+      "method": "custom",
+      "path": "readTable → find by id → patch → writeTable",
+      "params": [
+        "id",
+        "patch"
+      ],
+      "returns": "updated item"
+    },
+    {
+      "name": "上传视频",
+      "method": "POST",
+      "path": "releases",
+      "params": [
+        "draft release → upload asset → publish"
+      ],
+      "returns": "browser_download_url"
+    },
+    {
+      "name": "注册新用户",
+      "method": "custom",
+      "path": "users/users.json insert",
+      "params": [
+        "username",
+        "password",
+        "nickname"
+      ],
+      "returns": "user object"
+    },
+    {
+      "name": "登录",
+      "method": "custom",
+      "path": "users/users.json find by username",
+      "params": [
+        "username",
+        "password_hash"
+      ],
+      "returns": "user object or error"
+    },
+    {
+      "name": "发布作品",
+      "method": "custom",
+      "path": "videos/videos.json insert",
+      "params": [
+        "video_url",
+        "desc"
+      ],
+      "returns": "video object"
+    },
+    {
+      "name": "评论",
+      "method": "custom",
+      "path": "comments/comments.json insert",
+      "params": [
+        "video_id",
+        "content"
+      ],
+      "returns": "comment object"
+    },
+    {
+      "name": "点赞",
+      "method": "custom",
+      "path": "likes/likes.json insert",
+      "params": [
+        "video_id"
+      ],
+      "returns": "like object"
+    },
+    {
+      "name": "关注",
+      "method": "custom",
+      "path": "follows/follows.json insert",
+      "params": [
+        "followee_id"
+      ],
+      "returns": "follow object"
+    },
+    {
+      "name": "发私信",
+      "method": "custom",
+      "path": "messages/messages.json insert",
+      "params": [
+        "to_id",
+        "type",
+        "content"
+      ],
+      "returns": "message object"
+    },
+    {
+      "name": "发通知",
+      "method": "custom",
+      "path": "notifications/notifications.json insert",
+      "params": [
+        "user_id",
+        "type",
+        "title",
+        "body"
+      ],
+      "returns": "notification object"
+    },
+    {
+      "name": "设会员",
+      "method": "custom",
+      "path": "users updateById",
+      "params": [
+        "user_id",
+        "is_vip"
+      ],
+      "returns": "updated user"
+    },
+    {
+      "name": "封禁用户",
+      "method": "custom",
+      "path": "users updateById",
+      "params": [
+        "user_id",
+        "banned"
+      ],
+      "returns": "updated user"
+    },
+    {
+      "name": "设备注册检查",
+      "method": "custom",
+      "path": "devices/devices.json find by device_hash",
+      "params": [
+        "device_hash"
+      ],
+      "returns": "device record or null"
+    },
+    {
+      "name": "保存草稿",
+      "method": "custom",
+      "path": "drafts/{uid}.json put",
+      "params": [
+        "draft"
+      ],
+      "returns": "ok"
+    },
+    {
+      "name": "上传头像",
+      "method": "POST",
+      "path": "releases",
+      "params": [
+        "image file"
+      ],
+      "returns": "url → users updateById avatar_url"
+    },
+    {
+      "name": "举报",
+      "method": "custom",
+      "path": "notifications/notifications.json insert",
+      "params": [
+        "type=report",
+        "target_id",
+        "reason"
+      ],
+      "returns": "notification object"
+    },
+    {
+      "name": "注销账号",
+      "method": "custom",
+      "path": "users updateById status=deleted → 15天内清理",
+      "params": [
+        "user_id"
+      ],
+      "returns": "ok"
+    }
+  ],
+  "error_codes": {
+    "0": "成功",
+    "401": "未登录或token无效",
+    "403": "封禁/权限不足/设备重复注册",
+    "404": "文件不存在",
+    "409": "sha冲突（需重新读取再写入）",
+    "422": "参数校验失败",
+    "429": "API限流（5000次/小时）",
+    "500": "服务器错误"
+  }
+}
