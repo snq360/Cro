@@ -1,128 +1,127 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "api_version": "v1",
   "base": "https://api.github.com/repos/snq360/Cro/contents/data",
   "auth": {
-    "header": "Authorization: token ghp_xxx",
-    "note": "客户端硬编码token（测试版），正式版走Worker代理"
+    "header": "Authorization: token <TOKEN>",
+    "note": "token不写入仓库文件"
   },
   "tables": {
     "users": {
       "path": "users/users.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "username",
+        "nickname",
+        "avatarColor",
+        "bio",
+        "isAdmin",
+        "isVip",
+        "banned",
+        "created_at",
+        "last_seen"
+      ]
     },
     "videos": {
       "path": "videos/videos.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "userId",
+        "username",
+        "avatarColor",
+        "text",
+        "url",
+        "music",
+        "timeMs",
+        "likes",
+        "comments",
+        "views",
+        "liked",
+        "following"
+      ]
     },
     "comments": {
       "path": "comments/comments.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "videoId",
+        "userId",
+        "username",
+        "avatarColor",
+        "content",
+        "timeMs"
+      ]
     },
     "messages": {
       "path": "messages/messages.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "from_id",
+        "to_id",
+        "type",
+        "content",
+        "timeMs",
+        "recalled"
+      ]
     },
     "follows": {
       "path": "follows/follows.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "follower_id",
+        "followee_id",
+        "timeMs"
+      ]
     },
     "likes": {
       "path": "likes/likes.json",
-      "type": "array",
-      "id_field": "id"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "user_id",
+        "video_id",
+        "timeMs"
+      ]
     },
     "notifications": {
       "path": "notifications/notifications.json",
-      "type": "array",
-      "id_field": "id"
-    },
-    "devices": {
-      "path": "devices/devices.json",
-      "type": "array",
-      "id_field": "device_hash"
+      "id_field": "id",
+      "fields": [
+        "id",
+        "user_id",
+        "type",
+        "title",
+        "body",
+        "read",
+        "created_at"
+      ]
     }
   },
   "operations": {
-    "read_table": {
-      "method": "GET",
-      "template": "{table_path}",
-      "returns": "{content: base64, sha}"
-    },
-    "write_table": {
-      "method": "PUT",
-      "template": "{table_path}",
-      "params": [
-        "content(base64)",
-        "sha",
-        "message"
-      ],
-      "returns": "{sha, commit}"
-    },
-    "insert_record": "read → append → write",
-    "update_by_id": "read → find by id → patch → write",
-    "delete_by_id": "read → filter out → write"
+    "read": "GET {table_path} → {content: base64, sha}",
+    "write": "PUT {table_path} body={content: base64, sha, message}",
+    "insert": "read → append to array → write",
+    "update": "read → find by id → merge patch → write",
+    "delete": "read → filter out by id → write"
   },
   "error_codes": {
-    "0": {
-      "meaning": "成功",
-      "client_action": "继续"
-    },
-    "401": {
-      "meaning": "token无效",
-      "client_action": "提示重新登录"
-    },
-    "403": {
-      "meaning": "封禁/权限不足/设备重复",
-      "client_action": "显示原因，禁止操作"
-    },
-    "404": {
-      "meaning": "文件不存在",
-      "client_action": "当空数组处理"
-    },
-    "409": {
-      "meaning": "sha冲突",
-      "client_action": "重新GET→merge→重试最多5次"
-    },
-    "422": {
-      "meaning": "参数错误",
-      "client_action": "检查入参"
-    },
-    "429": {
-      "meaning": "API限流5000/h",
-      "client_action": "等待后重试，提示网络繁忙"
-    },
-    "500": {
-      "meaning": "服务端错误",
-      "client_action": "重试2次后提示"
-    }
-  },
-  "reserved_interfaces": {
-    "search": "预留：搜索用户/视频（客户端本地filter实现）",
-    "follow_list": "预留：关注列表（从follows表filter follower_id=me）",
-    "follower_list": "预留：粉丝列表（从follows表filter followee_id=me）",
-    "favorites": "预留：收藏夹（未来加favorites.json表）",
-    "like_list": "预留：点赞列表（从likes表filter user_id=me）",
-    "message_read_receipt": "预留：私信已读回执（messages表加read_at字段）",
-    "message_recall": "预留：撤回（messages表recalled=true）",
-    "notification_badge": "预留：未读数（notifications表filter user_id=me AND is_read=false）",
-    "report_block": "预留：举报拉黑（notifications表type=report）",
-    "video_privacy": "预留：作品隐私（videos表status: public/private/draft）",
-    "video_pin": "预留：置顶（videos表is_pinned字段）",
-    "view_count": "预留：播放量（videos表view_count字段）",
-    "share_count": "预留：分享计数（videos表share_count字段）",
-    "user_settings": "预留：通知/隐私开关（users表settings字段）",
-    "account_security": "预留：改密/设备管理（users表+devices表）",
-    "moderation_status": "预留：审核状态（videos表moderation_status字段）"
+    "0": "成功",
+    "401": "token无效/过期",
+    "403": "封禁/权限不足/设备重复注册(业务码4031)",
+    "404": "文件不存在→当空数组",
+    "409": "sha冲突→重读merge重试≤5次",
+    "422": "参数校验失败",
+    "429": "API限流5000/h→等待重试",
+    "500": "服务端错误→重试2次"
   },
   "compat_rules": [
-    "只增字段，不改字段名，不改路径",
-    "旧客户端忽略未知字段",
+    "只增不改",
+    "旧客户端忽略新字段",
     "新字段必须有默认值"
   ]
 }
