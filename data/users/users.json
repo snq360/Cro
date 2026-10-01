@@ -32,7 +32,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "一位普通用户",
@@ -65,7 +68,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "ningmeng",
@@ -98,7 +104,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "aeryui",
@@ -130,7 +139,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "无言",
@@ -162,7 +174,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "tmdtw",
@@ -194,7 +209,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "taoyp",
@@ -226,7 +244,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "Hadoos",
@@ -258,7 +279,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "1401323700",
@@ -290,7 +314,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "Ahm123",
@@ -322,7 +349,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "ppp",
@@ -354,7 +384,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "blwlh",
@@ -386,7 +419,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "hfu37fue7",
@@ -418,7 +454,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "wushuang",
@@ -450,7 +489,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "01",
@@ -482,7 +524,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "2890926448",
@@ -514,7 +559,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "jwzyyds",
@@ -546,7 +594,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "xuan0813",
@@ -578,7 +629,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "mmhh",
@@ -610,7 +664,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "3136660959",
@@ -642,7 +699,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "王文强",
@@ -674,7 +734,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "161",
@@ -706,7 +769,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "333666999",
@@ -738,7 +804,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "帅哥",
@@ -771,7 +840,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "gxbgxb",
@@ -804,7 +876,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "slf2011",
@@ -836,7 +911,10 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   },
   {
     "username": "3041707931",
@@ -870,6 +948,9 @@
     "last_active_at": 0,
     "register_source": "app",
     "register_device_hash": "",
-    "account_status": "active"
+    "account_status": "active",
+    "reset_code_hash": "",
+    "reset_attempts": 0,
+    "reset_cooldown_until": 0
   }
 ]
