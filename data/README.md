@@ -4,20 +4,21 @@
 
 ## 目录结构
 
-| 目录 | 用途 | 主文件 |
-|------|------|--------|
-| users/ | 用户账号 | users/users.json |
-| videos/ | 视频作品 | videos/videos.json |
-| comments/ | 评论 | comments/comments.json |
-| messages/ | 私信 | messages/messages.json |
-| follows/ | 关注关系 | follows/follows.json |
-| likes/ | 点赞记录 | likes/likes.json |
-| notifications/ | 通知 | notifications/notifications.json |
-| devices/ | 设备注册记录（防刷） | devices/devices.json |
-| drafts/ | 草稿自动保存 | drafts/<uid>.json |
-| media/ | 媒体文件索引（实际文件在Releases） | media/README.md |
-| _index/ | 全局索引 | _index/*.json |
-| endpoints.json | 机器可读接口定义 | endpoints.json |
+| 目录/文件 | 用途 |
+|-----------|------|
+| users/ | 用户账号（含密码哈希、会员、封禁、重置码） |
+| videos/ | 视频作品（URL在Releases，JSON存元数据） |
+| comments/ | 评论 |
+| messages/ | 私信消息 |
+| follows/ | 关注关系 |
+| likes/ | 点赞记录 |
+| notifications/ | 通知（点赞/评论/关注/系统/举报） |
+| devices/ | 设备注册记录（防僵尸注册，只存不可逆哈希） |
+| drafts/ | 草稿自动保存（每用户一个JSON文件） |
+| media/ | 媒体文件索引（实际文件在Releases） |
+| _index/ | 全局索引（视频清单/聊天附件清单/用户统计缓存） |
+| endpoints.json | 机器可读接口定义（含错误码、占位接口） |
+| schema.json | 数据库schema版本 |
 
 ## 认证方式
 ```
@@ -33,12 +34,11 @@ User-Agent: ShortFlow-App
 4. 409冲突 → 重新GET → merge → 重试最多5次
 
 ## GitHub限制（2026年实测）
-- 仓库推荐大小：10GB
-- Contents API单文件：≤1MB
-- 仓库单文件硬限：100MB
-- Releases单文件：≤2GiB，无总量限制，无带宽限制
-- API限速：认证后5000次/小时
-- Push大小：≤2GB
-
-## 视频存储
-视频本体存 GitHub Releases，JSON只存下载URL。
+| 项目 | 数值 |
+|------|------|
+| 仓库推荐大小 | 10GB |
+| Contents API单文件 | ≤1MB |
+| 仓库单文件硬限 | 100MB |
+| Releases单文件 | ≤2GiB，无总量/带宽限制 |
+| API限速 | 认证后5000次/小时 |
+| Push大小 | ≤2GB |
