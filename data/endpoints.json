@@ -1,214 +1,128 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "api_version": "v1",
-  "base_url": "https://api.github.com/repos/snq360/Cro/contents/data",
-  "endpoints": [
-    {
-      "name": "读取表",
-      "method": "GET",
-      "path": "{table}/{table}.json",
-      "params": [
-        "table"
-      ],
-      "returns": "{content: base64, sha: string}"
+  "base": "https://api.github.com/repos/snq360/Cro/contents/data",
+  "auth": {
+    "header": "Authorization: token ghp_xxx",
+    "note": "客户端硬编码token（测试版），正式版走Worker代理"
+  },
+  "tables": {
+    "users": {
+      "path": "users/users.json",
+      "type": "array",
+      "id_field": "id"
     },
-    {
-      "name": "写入表",
+    "videos": {
+      "path": "videos/videos.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "comments": {
+      "path": "comments/comments.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "messages": {
+      "path": "messages/messages.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "follows": {
+      "path": "follows/follows.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "likes": {
+      "path": "likes/likes.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "notifications": {
+      "path": "notifications/notifications.json",
+      "type": "array",
+      "id_field": "id"
+    },
+    "devices": {
+      "path": "devices/devices.json",
+      "type": "array",
+      "id_field": "device_hash"
+    }
+  },
+  "operations": {
+    "read_table": {
+      "method": "GET",
+      "template": "{table_path}",
+      "returns": "{content: base64, sha}"
+    },
+    "write_table": {
       "method": "PUT",
-      "path": "{table}/{table}.json",
+      "template": "{table_path}",
       "params": [
         "content(base64)",
         "sha",
         "message"
       ],
-      "returns": "{sha: string, commit: string}"
+      "returns": "{sha, commit}"
     },
-    {
-      "name": "插入记录",
-      "method": "custom",
-      "path": "readTable → modify → writeTable",
-      "params": [
-        "item"
-      ],
-      "returns": "item with id+created_at"
-    },
-    {
-      "name": "按ID更新",
-      "method": "custom",
-      "path": "readTable → find by id → patch → writeTable",
-      "params": [
-        "id",
-        "patch"
-      ],
-      "returns": "updated item"
-    },
-    {
-      "name": "上传视频",
-      "method": "POST",
-      "path": "releases",
-      "params": [
-        "draft release → upload asset → publish"
-      ],
-      "returns": "browser_download_url"
-    },
-    {
-      "name": "注册新用户",
-      "method": "custom",
-      "path": "users/users.json insert",
-      "params": [
-        "username",
-        "password",
-        "nickname"
-      ],
-      "returns": "user object"
-    },
-    {
-      "name": "登录",
-      "method": "custom",
-      "path": "users/users.json find by username",
-      "params": [
-        "username",
-        "password_hash"
-      ],
-      "returns": "user object or error"
-    },
-    {
-      "name": "发布作品",
-      "method": "custom",
-      "path": "videos/videos.json insert",
-      "params": [
-        "video_url",
-        "desc"
-      ],
-      "returns": "video object"
-    },
-    {
-      "name": "评论",
-      "method": "custom",
-      "path": "comments/comments.json insert",
-      "params": [
-        "video_id",
-        "content"
-      ],
-      "returns": "comment object"
-    },
-    {
-      "name": "点赞",
-      "method": "custom",
-      "path": "likes/likes.json insert",
-      "params": [
-        "video_id"
-      ],
-      "returns": "like object"
-    },
-    {
-      "name": "关注",
-      "method": "custom",
-      "path": "follows/follows.json insert",
-      "params": [
-        "followee_id"
-      ],
-      "returns": "follow object"
-    },
-    {
-      "name": "发私信",
-      "method": "custom",
-      "path": "messages/messages.json insert",
-      "params": [
-        "to_id",
-        "type",
-        "content"
-      ],
-      "returns": "message object"
-    },
-    {
-      "name": "发通知",
-      "method": "custom",
-      "path": "notifications/notifications.json insert",
-      "params": [
-        "user_id",
-        "type",
-        "title",
-        "body"
-      ],
-      "returns": "notification object"
-    },
-    {
-      "name": "设会员",
-      "method": "custom",
-      "path": "users updateById",
-      "params": [
-        "user_id",
-        "is_vip"
-      ],
-      "returns": "updated user"
-    },
-    {
-      "name": "封禁用户",
-      "method": "custom",
-      "path": "users updateById",
-      "params": [
-        "user_id",
-        "banned"
-      ],
-      "returns": "updated user"
-    },
-    {
-      "name": "设备注册检查",
-      "method": "custom",
-      "path": "devices/devices.json find by device_hash",
-      "params": [
-        "device_hash"
-      ],
-      "returns": "device record or null"
-    },
-    {
-      "name": "保存草稿",
-      "method": "custom",
-      "path": "drafts/{uid}.json put",
-      "params": [
-        "draft"
-      ],
-      "returns": "ok"
-    },
-    {
-      "name": "上传头像",
-      "method": "POST",
-      "path": "releases",
-      "params": [
-        "image file"
-      ],
-      "returns": "url → users updateById avatar_url"
-    },
-    {
-      "name": "举报",
-      "method": "custom",
-      "path": "notifications/notifications.json insert",
-      "params": [
-        "type=report",
-        "target_id",
-        "reason"
-      ],
-      "returns": "notification object"
-    },
-    {
-      "name": "注销账号",
-      "method": "custom",
-      "path": "users updateById status=deleted → 15天内清理",
-      "params": [
-        "user_id"
-      ],
-      "returns": "ok"
-    }
-  ],
+    "insert_record": "read → append → write",
+    "update_by_id": "read → find by id → patch → write",
+    "delete_by_id": "read → filter out → write"
+  },
   "error_codes": {
-    "0": "成功",
-    "401": "未登录或token无效",
-    "403": "封禁/权限不足/设备重复注册",
-    "404": "文件不存在",
-    "409": "sha冲突（需重新读取再写入）",
-    "422": "参数校验失败",
-    "429": "API限流（5000次/小时）",
-    "500": "服务器错误"
-  }
+    "0": {
+      "meaning": "成功",
+      "client_action": "继续"
+    },
+    "401": {
+      "meaning": "token无效",
+      "client_action": "提示重新登录"
+    },
+    "403": {
+      "meaning": "封禁/权限不足/设备重复",
+      "client_action": "显示原因，禁止操作"
+    },
+    "404": {
+      "meaning": "文件不存在",
+      "client_action": "当空数组处理"
+    },
+    "409": {
+      "meaning": "sha冲突",
+      "client_action": "重新GET→merge→重试最多5次"
+    },
+    "422": {
+      "meaning": "参数错误",
+      "client_action": "检查入参"
+    },
+    "429": {
+      "meaning": "API限流5000/h",
+      "client_action": "等待后重试，提示网络繁忙"
+    },
+    "500": {
+      "meaning": "服务端错误",
+      "client_action": "重试2次后提示"
+    }
+  },
+  "reserved_interfaces": {
+    "search": "预留：搜索用户/视频（客户端本地filter实现）",
+    "follow_list": "预留：关注列表（从follows表filter follower_id=me）",
+    "follower_list": "预留：粉丝列表（从follows表filter followee_id=me）",
+    "favorites": "预留：收藏夹（未来加favorites.json表）",
+    "like_list": "预留：点赞列表（从likes表filter user_id=me）",
+    "message_read_receipt": "预留：私信已读回执（messages表加read_at字段）",
+    "message_recall": "预留：撤回（messages表recalled=true）",
+    "notification_badge": "预留：未读数（notifications表filter user_id=me AND is_read=false）",
+    "report_block": "预留：举报拉黑（notifications表type=report）",
+    "video_privacy": "预留：作品隐私（videos表status: public/private/draft）",
+    "video_pin": "预留：置顶（videos表is_pinned字段）",
+    "view_count": "预留：播放量（videos表view_count字段）",
+    "share_count": "预留：分享计数（videos表share_count字段）",
+    "user_settings": "预留：通知/隐私开关（users表settings字段）",
+    "account_security": "预留：改密/设备管理（users表+devices表）",
+    "moderation_status": "预留：审核状态（videos表moderation_status字段）"
+  },
+  "compat_rules": [
+    "只增字段，不改字段名，不改路径",
+    "旧客户端忽略未知字段",
+    "新字段必须有默认值"
+  ]
 }
